@@ -26,7 +26,7 @@ public class HomePageWomen extends Utility{
 			List<WebElement> cards =  driver.findElements(By.xpath("//div[@id='center_column']/ul/li"));
 			System.out.println(cards.size());
 
-			for( int i=1; i < cards.size(); i++) {
+			for( int i=1; i <= cards.size(); i++) {
 				String DressName = driver.findElement(By.xpath(("//*[@id=\"center_column\"]/ul/li["+i+"]/div/div[2]/h5/a"))).getText();
 				String priceWithoutDollarSign = (driver.findElement(By.xpath(("//*[@id=\"center_column\"]/ul/li["+i+"]/div/div[2]/div[1]/span"))).getText()).substring(1);
 				String Price = driver.findElement(By.xpath(("//*[@id=\"center_column\"]/ul/li["+i+"]/div/div[2]/div[1]/span"))).getText();

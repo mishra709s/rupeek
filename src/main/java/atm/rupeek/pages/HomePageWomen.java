@@ -28,14 +28,11 @@ public class HomePageWomen extends Utility{
 
 			for( int i=1; i < cards.size(); i++) {
 				String DressName = driver.findElement(By.xpath(("//*[@id=\"center_column\"]/ul/li["+i+"]/div/div[2]/h5/a"))).getText();
-				String Price = (driver.findElement(By.xpath(("//*[@id=\"center_column\"]/ul/li["+i+"]/div/div[2]/div[1]/span"))).getText()).substring(1);
-				if(Double.parseDouble(Price) <= 28.00) {
+				String priceWithoutDollarSign = (driver.findElement(By.xpath(("//*[@id=\"center_column\"]/ul/li["+i+"]/div/div[2]/div[1]/span"))).getText()).substring(1);
+				String Price = driver.findElement(By.xpath(("//*[@id=\"center_column\"]/ul/li["+i+"]/div/div[2]/div[1]/span"))).getText();
+				if(Double.parseDouble(priceWithoutDollarSign) <= 28.00) {
 					System.out.println("Filtered Items - "+ DressName + ": " + Price);
 				}
-
-				/*String DressName = driver.findElement(By.xpath(("//*[@class='right-block']/h5/a"))).getText();
-				String Price = driver.findElement(By.xpath(("//*[@id='center_column']/ul/li['+i+']/div/div[2]/div[1]/span"))).getText();*/
-				//System.out.println(DressName + ": " + Price);
 			}
 			
 			// Calling close and then quit will kill the driver running process.

@@ -1,4 +1,4 @@
-package atm.repeek.utils;
+package atm.rupeek.utils;
 
 import java.util.concurrent.TimeUnit;
 
